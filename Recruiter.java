@@ -1,48 +1,61 @@
-public class Recruiter
-{
+
+public class Recruiter {
     // instance variables - replace the example below with your own
     private int id;
     private String name;
     private String email;
-    private String password;
-    private String joinDate;
+    private String phoneNumber;
+    private Location location;
 
-    public Recruiter()
-    {
-        // initialise instance variables
-    }
-
-    public static int getId()
-    {
-        return 0;
-    }
-    
-        public static String getName()
-    {
-        return "oop";
-    }
-    
-        
-    public static String getEmail()
-    {
-        return "oop";
-    }
-     public static String getPhoneNumber()
-    {
-        return "oop";
-    }
-    public static void setId(int id)
-    {
-    }
-    public static void setEmail(String Email)
-    {
-    }
-    public static void setName(String Name)
-    {
-    }
-    public static void setPhoneNumber(String phoneNumber)
-    {
+    public Recruiter(int id, String name, String email, String phoneNumber, Location location) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public void printData() {
+        System.out.println(getName());
+    }
 }
-

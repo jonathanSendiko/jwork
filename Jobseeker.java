@@ -1,7 +1,5 @@
 
-
-public class Jobseeker
-{
+public class Jobseeker {
     // instance variables - replace the example below with your own
     private int id;
     private String name;
@@ -12,45 +10,55 @@ public class Jobseeker
     /**
      * Constructor for objects of class Jobseeker
      */
-    public Jobseeker()
-    {
-        // initialise instance variables
+    public Jobseeker(int id, String name, String email, String password, String joinDate) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.joinDate = joinDate;
     }
 
-    
-    public static int getId()
-    {
-        return 0;
+    public int getId() {
+        return id;
     }
-    public static String getName()
-    {
-        return "oop";
+
+    public String getName() {
+        return name;
     }
-    public static String getEmail()
-    {
-        return "oop";
+
+    public String getEmail() {
+        return email;
     }
-    public static String getPassword()
-    {
-        return "oop";
+
+    public String getPassword() {
+        return password;
     }
-     public static String joinDate()
-    {
-        return "oop";
+
+    public String getJoinDate() {
+        return joinDate;
     }
-    public static void setId(int id)
-    {
+
+    public void setId(int id) {
+        this.id = id;
     }
-    public static void setName(String Name)
-    {
+
+    public void setName(String name) {
+        this.name = name;
     }
-    public static void setEmail(String email)
-    {
+
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public static void setPassword(String password)
-    {
+
+    public void setPassword(String password) {
+        this.password = password;
     }
-    public static void setJoinDate(String joinDate)
-    {
+
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
+    }
+
+    public void printData() {
+        System.out.println(getName());
     }
 }

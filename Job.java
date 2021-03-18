@@ -5,60 +5,70 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class Job
-{
+public class Job {
     // instance variables - replace the example below with your own
-    private int id;
+    public int id;
     private String name;
     private int fee;
     private String category;
+    private Recruiter recruiter;
 
-    /**
-     * Constructor for objects of class Job
-     */
-    public Job()
-    {
-        // initialise instance variables
+    public Job(int id, String name, Recruiter recruiter, int fee, String category) {
+        this.id = id;
+        this.name = name;
+        this.fee = fee;
+        this.category = category;
+        this.recruiter = recruiter;
     }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public static int getId()
-    {
-        return 0;
+    public int getId() {
+        return id;
+
     }
-    public static String getName()
-    {
-        return "oop";
+
+    public String getName() {
+        return name;
     }
-    public static int getFee()
-    {
-        return 0;
+
+    public int getFee() {
+        return fee;
     }
-    public static String getCategory()
-    {
-        return "oop";
+
+    public Recruiter getRecruiter() {
+        return recruiter;
     }
-    public static void setId(int id)
-    {
-       
+
+    public String getCategory() {
+        return category;
     }
-    public static void setName(String name)
-    {
-       
+
+    public void setId(int id) {
+        this.id = id;
+
     }
-    public static void setFee(int fee)
-    {
-       
+
+    public void setName(String name) {
+        this.name = name;
+
     }
-    public static void setCategory(String category)
-    {
-        
+
+    public void setRecruiter(Recruiter recruiter) {
+        this.recruiter = recruiter;
+
     }
-    
-    
+
+    public void setFee(int fee) {
+        this.fee = fee;
+
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+
+    }
+
+    public void printData() {
+
+    }
+
 }
