@@ -8,48 +8,39 @@
 public class DatabaseRecruiter {
 
     // listjob variable
-    private String[] listRecruiter;
-
-    // Constructor
-    public DatabaseRecruiter() {
-
-    }
-
-    public DatabaseRecruiter(String[] listRecruiter) {
-        this.listRecruiter = listRecruiter;
-    }
+    private static String[] listRecruiter;
 
     /**
-     * Method to add a new Job
+     * Method to add a new Recruiter
      * 
-     * @param job
-     * @return boolean value whether the Job addition is successful or not
+     * @param recruiter
+     * @return boolean value whether the Recruiter addition is successful or not
      */
-    public boolean addJob(Recruiter recruiter) {
+    public static boolean addRecruiter(Recruiter recruiter) {
         return false;
     }
 
     /**
-     * Method to remove an existing Job
+     * Method to remove an existing Recruiter
      * 
-     * @param job
-     * @return boolean value whether the Job removal is successful or not
+     * @param recruiter
+     * @return boolean value whether the Recruiter removal is successful or not
      */
-    public boolean removeRecruiter(Recruiter recruiter) {
+    public static boolean removeRecruiter(Recruiter recruiter) {
         return false;
     }
 
-    // Access method to fetch a specific existing Job
-    public Recruiter getRecruiter() {
+    // Access method to fetch a specific existing Recruiter
+    public static Recruiter getRecruiter() {
         return null;
     }
 
     /**
-     * Access method to fetch a list of existing Job
+     * Access method to fetch a list of existing Recruiter
      * 
-     * @return listJob
+     * @return listRecruiter
      */
-    public String[] getListRecruiter() {
+    public static String[] getListRecruiter() {
         return listRecruiter;
     }
 }

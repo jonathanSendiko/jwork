@@ -10,8 +10,8 @@ public class Job {
     public int id;
     private String name;
     private int fee;
-    private String category;
     private Recruiter recruiter;
+    private JobCategory category;
 
     /**
      * Constructor for the Job Class
@@ -22,7 +22,7 @@ public class Job {
      * @param fee       fee of the Job Class
      * @param category  category of the Job Class
      */
-    public Job(int id, String name, Recruiter recruiter, int fee, String category) {
+    public Job(int id, String name, Recruiter recruiter, int fee, JobCategory category) {
         this.id = id;
         this.name = name;
         this.fee = fee;
@@ -73,7 +73,7 @@ public class Job {
      * 
      * @return Category of the Job
      */
-    public String getCategory() {
+    public JobCategory getCategory() {
         return category;
     }
 
@@ -122,13 +122,19 @@ public class Job {
      * 
      * @param category category to replace the previous category or a new one
      */
-    public void setCategory(String category) {
+    public void setCategory(JobCategory category) {
         this.category = category;
 
     }
 
     public void printData() {
-        System.out.println(getName());
+        System.out.println("===================== JOB =====================");
+        System.out.println("ID: " + id);
+        System.out.println("Name: " + name);
+        System.out.println("Recruiter: " + recruiter.getName());
+        System.out.println("City: " + recruiter.getLocation().getCity());
+        System.out.println("Fee: " + fee);
+        System.out.println("Category: " + category);
 
     }
 

@@ -8,16 +8,7 @@
 public class DatabaseJob {
 
     // listjob variable
-    private String[] listJob;
-
-    // Constructor
-    public DatabaseJob() {
-        listJob = new String[100];
-    }
-
-    public DatabaseJob(String[] listJob) {
-        this.listJob = listJob;
-    }
+    private static String[] listJob;
 
     /**
      * Method to add a new Job
@@ -25,7 +16,7 @@ public class DatabaseJob {
      * @param job
      * @return boolean value whether the Job addition is successful or not
      */
-    public boolean addJob(Job job) {
+    public static boolean addJob(Job job) {
         return false;
     }
 
@@ -35,12 +26,12 @@ public class DatabaseJob {
      * @param job
      * @return boolean value whether the Job removal is successful or not
      */
-    public boolean remove(Job job) {
+    public static boolean remove(Job job) {
         return false;
     }
 
     // Access method to fetch a specific existing Job
-    public Job getJob() {
+    public static Job getJob() {
         return null;
     }
 
@@ -49,7 +40,7 @@ public class DatabaseJob {
      * 
      * @return listJob
      */
-    public String[] getListJob() {
+    public static String[] getListJob() {
         return listJob;
     }
 }
