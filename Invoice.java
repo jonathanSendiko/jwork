@@ -166,7 +166,7 @@ public class Invoice {
         System.out.println("ID: " + id);
         System.out.println("ID Job: " + idJob);
         System.out.println("Date: " + date);
-        System.out.println("City: " + jobseeker.getName());
+        System.out.println("Seeker: " + jobseeker.getName());
         System.out.println("Fee: " + totalFee);
         System.out.println("Status: " + status);
     }
