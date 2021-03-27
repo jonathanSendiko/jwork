@@ -25,6 +25,11 @@ public class JWork {
         Location location1 = new Location("Banten", "Tangerang", "Tempat Lahir");
         Recruiter recruiter = new Recruiter(20, "Jonathan", "jonathan.sendiko@gmail.com", "085945644450", location1);
         Job job = new Job(101, "Web Developer", recruiter, 100000000, JobCategory.WebDeveloper);
-        job.printData();
+        Jobseeker jobseeker = new Jobseeker(101, "Jonathan", "Jonathan.sendiko@gmail.com", "jonathanTekkom",
+                "27 Maret 2021");
+        Invoice invoice = new Invoice(102, job.id, "27 Maret 2021", job.getFee(), jobseeker, PaymentType.BankPayment,
+                InvoiceStatus.Finished);
+        invoice.printData();
+
     }
 }

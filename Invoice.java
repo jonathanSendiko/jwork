@@ -12,6 +12,8 @@ public class Invoice {
     private String date;
     private int totalFee;
     private Jobseeker jobseeker;
+    private PaymentType paymentType;
+    private InvoiceStatus status;
 
     /**
      * Constructor for the invoce class
@@ -22,12 +24,15 @@ public class Invoice {
      * @param totalFee
      * @param jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker) {
+    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType,
+            InvoiceStatus status) {
         this.id = id;
         this.idJob = idJob;
         this.date = date;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
+        this.paymentType = paymentType;
+        this.status = status;
     }
 
     /**
@@ -64,6 +69,24 @@ public class Invoice {
      */
     public int getTotalFee() {
         return totalFee;
+    }
+
+    /**
+     * Accessor Method to get Payment Type of the Invoice
+     * 
+     * @return Payment Type of the Invoice
+     */
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    /**
+     * Accessor Method to get invoice status of the Invoice
+     * 
+     * @return Invoice status of the Invoice
+     */
+    public InvoiceStatus getInvoiceStatus() {
+        return status;
     }
 
     /**
@@ -120,7 +143,31 @@ public class Invoice {
         this.jobseeker = jobseeker;
     }
 
+    /**
+     * Mutator Method to set or change Id of the Invoice
+     * 
+     * @param jobseeker Set the jobseeker to chosen jobseeker object
+     */
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    /**
+     * Mutator Method to set or change Id of the Invoice
+     * 
+     * @param jobseeker Set the jobseeker to chosen jobseeker object
+     */
+    public void setInvoiceStatus(InvoiceStatus status) {
+        this.status = status;
+    }
+
     public void printData() {
-        System.out.println(getTotalFee());
+        System.out.println("===================== INVOICE =====================");
+        System.out.println("ID: " + id);
+        System.out.println("ID Job: " + idJob);
+        System.out.println("Date: " + date);
+        System.out.println("City: " + jobseeker.getName());
+        System.out.println("Fee: " + totalFee);
+        System.out.println("Status: " + status);
     }
 }
