@@ -28,7 +28,7 @@ public class JWork {
         Jobseeker jobseeker = new Jobseeker(101, "Jonathan", "Jonathan.sendiko@gmail.com", "jonathanTekkom",
                 "27 Maret 2021");
         Invoice invoice = new Invoice(102, job.id, "27 Maret 2021", job.getFee(), jobseeker, PaymentType.BankPayment,
-                InvoiceStatus.Finished);
+                InvoiceStatus.Ongoing);
         invoice.printData();
 
     }
