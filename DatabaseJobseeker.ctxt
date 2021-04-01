@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=DatabaseJobseeker
 comment1.params=jobseeker
-comment1.target=boolean\ addJobseeker(Jobseeker)
+comment1.target=Jobseeker\ addJobseeker(Jobseeker)
 comment2.params=jobseeker
-comment2.target=boolean\ removeJobseeker(Jobseeker)
+comment2.target=Jobseeker\ removeJobseeker(Jobseeker)
 comment3.params=
 comment3.target=Jobseeker\ getJobseeker()
 comment4.params=

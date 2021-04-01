@@ -5,15 +5,14 @@
  * @author Jonathan
  * @version March 18 2021
  */
-public class Invoice {
+public abstract class Invoice {
     // instance variables for the class
     private int id;
-    private int idJob;
+    private Job job;
     private String date;
-    private int totalFee;
     private Jobseeker jobseeker;
-    private PaymentType paymentType;
-    private InvoiceStatus status;
+    private InvoiceStatus invoiceStatus;
+    protected int totalFee;
 
     /**
      * Constructor for the invoce class
@@ -24,15 +23,12 @@ public class Invoice {
      * @param totalFee
      * @param jobseeker
      */
-    public Invoice(int id, int idJob, String date, int totalFee, Jobseeker jobseeker, PaymentType paymentType,
-            InvoiceStatus status) {
+    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
         this.id = id;
-        this.idJob = idJob;
+        this.job = job;
         this.date = date;
-        this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.paymentType = paymentType;
-        this.status = status;
+        this.invoiceStatus = invoiceStatus;
     }
 
     /**
@@ -49,8 +45,8 @@ public class Invoice {
      * 
      * @return idJob of the Invoice
      */
-    public int getIdJob() {
-        return idJob;
+    public Job getJob() {
+        return job;
     }
 
     /**
@@ -76,9 +72,7 @@ public class Invoice {
      * 
      * @return Payment Type of the Invoice
      */
-    public PaymentType getPaymentType() {
-        return paymentType;
-    }
+    public abstract PaymentType getPaymentType();
 
     /**
      * Accessor Method to get invoice status of the Invoice
@@ -86,7 +80,7 @@ public class Invoice {
      * @return Invoice status of the Invoice
      */
     public InvoiceStatus getInvoiceStatus() {
-        return status;
+        return invoiceStatus;
     }
 
     /**
@@ -103,8 +97,8 @@ public class Invoice {
      * 
      * @param idJobs idJobs to set or changeto
      */
-    public void setIdJobs(int idJobs) {
-        this.idJob = idJobs;
+    public void setJob(Job job) {
+        this.job = job;
     }
 
     /**
@@ -121,9 +115,7 @@ public class Invoice {
      * 
      * @param totalFee totalfee to set or changeto
      */
-    public void setTotalFee(int totalFee) {
-        this.totalFee = totalFee;
-    }
+    public abstract void setTotalFee();
 
     /**
      * Mutator Method to set or change Id of the Invoice
@@ -148,26 +140,9 @@ public class Invoice {
      * 
      * @param jobseeker Set the jobseeker to chosen jobseeker object
      */
-    public void setPaymentType(PaymentType paymentType) {
-        this.paymentType = paymentType;
+    public void setInvoiceStatus(InvoiceStatus invoiceStatus) {
+        this.invoiceStatus = invoiceStatus;
     }
 
-    /**
-     * Mutator Method to set or change Id of the Invoice
-     * 
-     * @param jobseeker Set the jobseeker to chosen jobseeker object
-     */
-    public void setInvoiceStatus(InvoiceStatus status) {
-        this.status = status;
-    }
-
-    public void printData() {
-        System.out.println("===================== INVOICE =====================");
-        System.out.println("ID: " + id);
-        System.out.println("ID Job: " + idJob);
-        System.out.println("Date: " + date);
-        System.out.println("Seeker: " + jobseeker.getName());
-        System.out.println("Fee: " + totalFee);
-        System.out.println("Status: " + status);
-    }
+    public abstract void printData();
 }

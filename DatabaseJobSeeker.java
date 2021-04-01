@@ -2,12 +2,12 @@
 public class DatabaseJobseeker {
     private static String[] listJobseeker;
 
-    public static boolean addJobseeker(Jobseeker jobseeker) {
-        return false;
+    public static Jobseeker addJobseeker(Jobseeker jobseeker) {
+        return jobseeker;
     }
 
-    public static boolean removeJobseeker(Jobseeker jobseeker) {
-        return false;
+    public static Jobseeker removeJobseeker(Jobseeker jobseeker) {
+        return jobseeker;
     }
 
     public static Jobseeker getJobseeker() {

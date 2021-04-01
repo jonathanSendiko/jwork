@@ -16,8 +16,8 @@ public class DatabaseRecruiter {
      * @param recruiter
      * @return boolean value whether the Recruiter addition is successful or not
      */
-    public static boolean addRecruiter(Recruiter recruiter) {
-        return false;
+    public static Recruiter addRecruiter(Recruiter recruiter) {
+        return recruiter;
     }
 
     /**
@@ -26,8 +26,8 @@ public class DatabaseRecruiter {
      * @param recruiter
      * @return boolean value whether the Recruiter removal is successful or not
      */
-    public static boolean removeRecruiter(Recruiter recruiter) {
-        return false;
+    public static Recruiter removeRecruiter(Recruiter recruiter) {
+        return recruiter;
     }
 
     // Access method to fetch a specific existing Recruiter

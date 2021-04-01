@@ -16,8 +16,8 @@ public class DatabaseJob {
      * @param job
      * @return boolean value whether the Job addition is successful or not
      */
-    public static boolean addJob(Job job) {
-        return false;
+    public static Job addJob(Job job) {
+        return job;
     }
 
     /**
@@ -26,8 +26,8 @@ public class DatabaseJob {
      * @param job
      * @return boolean value whether the Job removal is successful or not
      */
-    public static boolean remove(Job job) {
-        return false;
+    public static Job removeJob(Job job) {
+        return job;
     }
 
     // Access method to fetch a specific existing Job
