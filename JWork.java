@@ -32,9 +32,10 @@ public class JWork {
         EwalletPayment payment1 = new EwalletPayment(1, job, "1 April 2021", jobseeker, InvoiceStatus.Finished);
         EwalletPayment payment2 = new EwalletPayment(2, job, "5 April 2021", jobseeker, InvoiceStatus.Finished, bonus1);
         EwalletPayment payment3 = new EwalletPayment(3, job, "1 April 2021", jobseeker, InvoiceStatus.Finished, bonus2);
-        payment1.printData();
-        payment2.printData();
-        payment3.printData();
+        BankPayment bank1 = new BankPayment(1, job, "3 April 2021", jobseeker, InvoiceStatus.Ongoing);
+        BankPayment bank2 = new BankPayment(2, job, "4 April 2021", jobseeker, InvoiceStatus.Finished, 12);
+        bank1.printData();
+        bank2.printData();
 
     }
 }
