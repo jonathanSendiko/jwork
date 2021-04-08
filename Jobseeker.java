@@ -1,3 +1,8 @@
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Jobseeker {
     // instance variables for the Jobseeker
@@ -5,7 +10,7 @@ public class Jobseeker {
     private String name;
     private String email;
     private String password;
-    private String joinDate;
+    public Calendar joinDate;
 
     /**
      * Constructor for the Jobseeker Class
@@ -16,12 +21,29 @@ public class Jobseeker {
      * @param password password of the Jobseeker who wants to register
      * @param joinDate date of the Jobseeker who wants to register
      */
-    public Jobseeker(int id, String name, String email, String password, String joinDate) {
+    public Jobseeker(int id, String name, String email, String password, Calendar joinDate) {
         this.id = id;
         this.name = name;
-        this.email = email;
-        this.password = password;
+        setEmail(email);
+        setPassword(password);
         this.joinDate = joinDate;
+    }
+
+    public Jobseeker(int id, String name, String email, String password, int year, int month, int dayOfMonth) {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
+
+    }
+
+    public Jobseeker(int id, String name, String email, String password) {
+        this.id = id;
+        this.name = name;
+        setEmail(email);
+        setPassword(password);
+
     }
 
     /**
@@ -65,7 +87,7 @@ public class Jobseeker {
      * 
      * @return date of the Jobseeker joined
      */
-    public String getJoinDate() {
+    public Calendar getJoinDate() {
         return joinDate;
     }
 
@@ -93,7 +115,14 @@ public class Jobseeker {
      * @param email new email of the Jobseeker
      */
     public void setEmail(String email) {
-        this.email = email;
+        String regex = "^[a-zA-Z0-9&*_~]+([\\.{1}]?[a-z]+)+@[a-z0-9]+([\\.]{1}[a-z]+)\\S+(?!.*?\\.\\.)";
+        Pattern pattern1 = Pattern.compile(regex);
+        Matcher matcher1 = pattern1.matcher(email);
+        if (matcher1.matches()) {
+            this.email = email;
+        } else {
+            this.email = "Email Format is invalid";
+        }
     }
 
     /**
@@ -102,7 +131,14 @@ public class Jobseeker {
      * @param password new password of the Jobseeker
      */
     public void setPassword(String password) {
-        this.password = password;
+        String regex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{6,}$";
+        Pattern pattern1 = Pattern.compile(regex);
+        Matcher matcher1 = pattern1.matcher(password);
+        if (matcher1.matches()) {
+            this.password = password;
+        } else {
+            this.password = "Password Format is invalid";
+        }
     }
 
     /**
@@ -110,8 +146,12 @@ public class Jobseeker {
      * 
      * @param joinDate new date of the Jobseeker joined
      */
-    public void setJoinDate(String joinDate) {
+    public void setJoinDate(Calendar joinDate) {
         this.joinDate = joinDate;
+    }
+
+    public void setJoinDate(int year, int month, int dayOfMonth) {
+        this.joinDate = new GregorianCalendar(year, month, dayOfMonth);
     }
 
     /**
@@ -119,7 +159,17 @@ public class Jobseeker {
      * 
      * @return nothing
      */
-    public void printData() {
-        System.out.println(getName());
+    @Override
+    public String toString() {
+        if (this.joinDate == null) {
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                    + getPassword();
+        } else {
+            SimpleDateFormat formattedDate = new SimpleDateFormat("dd-MMMM-yyyy");
+            String date = formattedDate.format(getJoinDate().getTime());
+            return "Id = " + getId() + "\nNama = " + getName() + "\nEmail = " + getEmail() + "\nPassword = "
+                    + getPassword() + "\nJoin Date = " + date;
+        }
+
     }
 }

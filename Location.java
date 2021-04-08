@@ -82,7 +82,8 @@ public class Location {
     /**
      * print the province of the Location
      */
-    public void printData() {
-        System.out.println(getProvince());
+    @Override
+    public String toString() {
+        return "Province = " + getProvince() + "\nCity = " + getCity() + "\nDescription = " + getDescription();
     }
 }
