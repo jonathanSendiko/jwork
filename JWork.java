@@ -34,7 +34,7 @@ public class JWork {
         System.out.println(jobseeker3.toString() + "\n");
 
         jobseeker1.setEmail("jonathan.sendiko@hotmail.com");
-        jobseeker1.setPassword("jonathan0804");
+        jobseeker1.setPassword("jonAthan0804");
         System.out.println("Fixed Jobseeker1 : \n" + jobseeker1.toString());
 
         // Bonus bonus1 = new Bonus(120, "Teknik Komputer", 200000, 2000000, true);
