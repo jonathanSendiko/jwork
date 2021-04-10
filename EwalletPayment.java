@@ -1,13 +1,15 @@
+import java.text.SimpleDateFormat;
+
 public class EwalletPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
 
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
-        super(id, job, date, jobseeker, invoiceStatus);
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
+        super(id, job, jobseeker, invoiceStatus);
     }
 
-    public EwalletPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus) {
-        super(id, job, date, jobseeker, invoiceStatus);
+    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus) {
+        super(id, job, jobseeker, invoiceStatus);
         this.bonus = bonus;
     }
 
@@ -29,19 +31,23 @@ public class EwalletPayment extends Invoice {
     }
 
     @Override
-    public void printData() {
-        System.out.println("===================== INVOICE =====================");
+    public String toString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = dateFormat.format(getDate().getTime());
+        System.out.println("===================== E-WALLET PAYMENT =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
+        System.out.println("Date: " + date);
         System.out.println("Job Seeker: " + getJobseeker().getName());
+
         if (bonus != null && (bonus.getActive() == true) && getJob().getFee() > bonus.getMinTotalFee()) {
             System.out.println("Referral Code: " + bonus.getReferralCode());
-
         }
+
         setTotalFee();
-        System.out.println("Fee: " + getTotalFee());
+        System.out.println("Total Fee: " + getTotalFee());
         System.out.println("Status: " + getInvoiceStatus());
         System.out.println("Payment Type: " + PAYMENT_TYPE);
+        return "";
     }
 }

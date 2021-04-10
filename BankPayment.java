@@ -1,15 +1,18 @@
+
+import java.text.SimpleDateFormat;
+
 public class BankPayment extends Invoice {
 
     private int adminFee;
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
 
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
-        super(id, job, date, jobseeker, invoiceStatus);
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
+        super(id, job, jobseeker, invoiceStatus);
     }
 
-    public BankPayment(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee) {
-        super(id, job, date, jobseeker, invoiceStatus);
-        this.setAdminFee(adminFee);
+    public BankPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, int adminFee) {
+        super(id, job, jobseeker, invoiceStatus);
+        this.adminFee = adminFee;
     }
 
     @Override
@@ -35,16 +38,20 @@ public class BankPayment extends Invoice {
     }
 
     @Override
-    public void printData() {
-        System.out.println("===================== INVOICE =====================");
+    public String toString() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
+        String date = dateFormat.format(getDate().getTime());
+        System.out.println("===================== BANK PAYMENT =====================");
         System.out.println("ID: " + getId());
         System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + getDate());
+        System.out.println("Date: " + date);
         System.out.println("Job Seeker: " + getJobseeker().getName());
-        System.out.println("Admin Fee: " + adminFee);
+
         setTotalFee();
+        System.out.println("Admin Fee: " + adminFee);
         System.out.println("Total Fee: " + getTotalFee());
         System.out.println("Status: " + getInvoiceStatus());
         System.out.println("Payment Type: " + PAYMENT_TYPE);
+        return "";
     }
 }

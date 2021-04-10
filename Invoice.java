@@ -1,3 +1,5 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 
 /**
  * Write a description of class Invoice here.
@@ -9,7 +11,7 @@ public abstract class Invoice {
     // instance variables for the class
     private int id;
     private Job job;
-    private String date;
+    private Calendar date;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
     protected int totalFee;
@@ -23,12 +25,13 @@ public abstract class Invoice {
      * @param totalFee
      * @param jobseeker
      */
-    public Invoice(int id, Job job, String date, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
+    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
         this.id = id;
         this.job = job;
-        this.date = date;
+        this.totalFee = totalFee;
         this.jobseeker = jobseeker;
         this.invoiceStatus = invoiceStatus;
+        this.date = Calendar.getInstance();
     }
 
     /**
@@ -54,7 +57,7 @@ public abstract class Invoice {
      * 
      * @return date of the Invoice
      */
-    public String getDate() {
+    public Calendar getDate() {
         return date;
     }
 
@@ -106,8 +109,12 @@ public abstract class Invoice {
      * 
      * @param date date to set or changeto
      */
-    public void setDate(String date) {
+    public void setDate(Calendar date) {
         this.date = date;
+    }
+
+    public void setDate(int year, int month, int dayOfMonth) {
+        this.date = new GregorianCalendar(year, month, dayOfMonth);
     }
 
     /**
@@ -144,5 +151,5 @@ public abstract class Invoice {
         this.invoiceStatus = invoiceStatus;
     }
 
-    public abstract void printData();
+    public abstract String toString();
 }
