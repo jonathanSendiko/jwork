@@ -1,4 +1,3 @@
-import java.util.GregorianCalendar;
 
 /**
  * Write a description of class JWork here.
@@ -7,49 +6,38 @@ import java.util.GregorianCalendar;
  * @version April 4 2021
  */
 public class JWork {
-    // instance variables - replace the example below with your own
+        // instance variables - replace the example below with your own
 
-    /**
-     * Constructor for objects of class JWork
-     */
-    public JWork() {
+        /**
+         * Constructor for objects of class JWork
+         */
+        public JWork() {
 
-    }
+        }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param y a sample parameter for a method
-     * @return the sum of x and y
-     */
-    public static void main(String[] args) {
-        Jobseeker jobseeker1 = new Jobseeker(101, "Jonathan", ".jonathan.sendiko@ui.ac.id", "jonathanTekkom",
-                new GregorianCalendar(2000, 8, 15));
-        Jobseeker jobseeker2 = new Jobseeker(101, "Jonathan", "jonathan.sendiko@ui.ac.id", "jonathanTekkom1506", 2000,
-                06, 15);
-        Jobseeker jobseeker3 = new Jobseeker(101, "Jonathan", "Jonathan.sendiko@gmail.com", "jonathanTekkom1506");
+        public static void main(String[] args) {
 
-        // System.out.println(jobseeker1.toString() + "\n");
-        // System.out.println(jobseeker2.toString() + "\n");
-        // System.out.println(jobseeker3.toString() + "\n");
+                Location location1 = new Location("Banten", "Tangerang", "Tempat Lahir");
+                DatabaseRecruiter.addRecruiter(new Recruiter(DatabaseRecruiter.getLastId() + 1, "Jonathan",
+                                "jonathan.sendiko@gmail.com", "085945644450", location1));
+                DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Jonathan",
+                                "jonathan@ui.ac.id", "JonaTekkom123", 2021, 04, 22));
+                DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Jonathan",
+                                "jonathan@ui.ac.id", "JonaTekkom123", 2021, 04, 23));
+                DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilham",
+                                "Ilham@ui.ac.id", "IMasdasda123", 2021, 03, 6));
 
-        // jobseeker1.setEmail("jonathan.sendiko@hotmail.com");
-        // jobseeker1.setPassword("jonAthan0804");
-        // System.out.println("Fixed Jobseeker1 : \n" + jobseeker1.toString());
+                System.out.println("\n=====================Jobseeker Database====================\n");
+                System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
+                DatabaseJob.addJob(new Job(1, "Backend Engineer BukaLapak", DatabaseRecruiter.getRecruiterById(1),
+                                10000, JobCategory.BackEnd));
+                DatabaseJob.addJob(new Job(1, "Data Analyst Tokopedia", DatabaseRecruiter.getRecruiterById(1), 20000,
+                                JobCategory.DataAnalyst));
+                DatabaseJob.addJob(new Job(1, "Data Scientist Shopee", DatabaseRecruiter.getRecruiterById(1), 10000,
+                                JobCategory.DataScientist));
 
-        Bonus bonus1 = new Bonus(120, "Teknik Komputer", 200000, 2000000, true);
-        Bonus bonus2 = new Bonus(120, "Teknik Komputer", 200000, 200000, true);
-        Location location1 = new Location("Banten", "Tangerang", "Tempat Lahir");
-        Recruiter recruiter = new Recruiter(20, "Jonathan", "jonathan.sendiko@gmail.com", "085945644450", location1);
-        Job job = new Job(101, "Web Developer", recruiter, 100000000, JobCategory.WebDeveloper);
-        EwalletPayment payment1 = new EwalletPayment(1, job, jobseeker1, InvoiceStatus.Finished);
-        EwalletPayment payment2 = new EwalletPayment(2, job, jobseeker2, InvoiceStatus.Finished, bonus1);
-        EwalletPayment payment3 = new EwalletPayment(3, job, jobseeker3, InvoiceStatus.Finished, bonus2);
+                System.out.println("\n=====================Job Database By Category====================\n");
+                System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
 
-        BankPayment bank1 = new BankPayment(1, job, jobseeker1, InvoiceStatus.Finished);
-        BankPayment bank2 = new BankPayment(2, job, jobseeker1, InvoiceStatus.Finished, 20000);
-
-        payment3.toString();
-        bank2.toString();
-    }
+        }
 }

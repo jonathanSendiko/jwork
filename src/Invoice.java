@@ -1,5 +1,6 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.ArrayList;
 
 /**
  * Write a description of class Invoice here.
@@ -10,11 +11,11 @@ import java.util.GregorianCalendar;
 public abstract class Invoice {
     // instance variables for the class
     private int id;
-    private Job job;
+    private ArrayList<Job> jobs;
     private Calendar date;
+    protected int totalFee;
     private Jobseeker jobseeker;
     private InvoiceStatus invoiceStatus;
-    protected int totalFee;
 
     /**
      * Constructor for the invoce class
@@ -25,12 +26,12 @@ public abstract class Invoice {
      * @param totalFee
      * @param jobseeker
      */
-    public Invoice(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
+    public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         this.id = id;
-        this.job = job;
+        this.jobs = jobs;
         this.totalFee = totalFee;
         this.jobseeker = jobseeker;
-        this.invoiceStatus = invoiceStatus;
+        this.invoiceStatus = InvoiceStatus.Ongoing;
         this.date = Calendar.getInstance();
     }
 
@@ -48,8 +49,8 @@ public abstract class Invoice {
      * 
      * @return idJob of the Invoice
      */
-    public Job getJob() {
-        return job;
+    public ArrayList<Job> getJobs() {
+        return jobs;
     }
 
     /**
@@ -100,8 +101,8 @@ public abstract class Invoice {
      * 
      * @param idJobs idJobs to set or changeto
      */
-    public void setJob(Job job) {
-        this.job = job;
+    public void setJobs(ArrayList<Job> jobs) {
+        this.jobs = jobs;
     }
 
     /**

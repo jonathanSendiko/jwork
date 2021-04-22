@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /**
  * Write a description of class JWork here.
  *
@@ -8,7 +10,8 @@
 public class DatabaseRecruiter {
 
     // listjob variable
-    private static String[] listRecruiter;
+    private static ArrayList<Recruiter> RECRUITER_DATABASE = new ArrayList<Recruiter>();
+    private static int lastId = 0;
 
     /**
      * Method to add a new Recruiter
@@ -16,8 +19,8 @@ public class DatabaseRecruiter {
      * @param recruiter
      * @return boolean value whether the Recruiter addition is successful or not
      */
-    public static Recruiter addRecruiter(Recruiter recruiter) {
-        return recruiter;
+    public static ArrayList<Recruiter> getRecruiterDatabase() {
+        return RECRUITER_DATABASE;
     }
 
     /**
@@ -26,21 +29,39 @@ public class DatabaseRecruiter {
      * @param recruiter
      * @return boolean value whether the Recruiter removal is successful or not
      */
-    public static Recruiter removeRecruiter(Recruiter recruiter) {
-        return recruiter;
+    public static int getLastId() {
+        return lastId;
     }
 
     // Access method to fetch a specific existing Recruiter
-    public static Recruiter getRecruiter() {
-        return null;
+    public static Recruiter getRecruiterById(int id) {
+        Recruiter temp = null;
+        for (Recruiter recruiter : RECRUITER_DATABASE) {
+            if (id == recruiter.getId()) {
+                temp = recruiter;
+            } else {
+                temp = null;
+            }
+        }
+        return temp;
     }
 
-    /**
-     * Access method to fetch a list of existing Recruiter
-     * 
-     * @return listRecruiter
-     */
-    public static String[] getListRecruiter() {
-        return listRecruiter;
+    public static boolean addRecruiter(Recruiter recruiter) {
+        RECRUITER_DATABASE.add(recruiter);
+        lastId = recruiter.getId();
+        return true;
+    }
+
+    public static boolean removeRecruiter(int id) {
+        boolean temp = true;
+        for (Recruiter recruiter : RECRUITER_DATABASE) {
+            if (id == recruiter.getId()) {
+                RECRUITER_DATABASE.remove(id);
+                temp = true;
+            } else {
+                temp = false;
+            }
+        }
+        return temp;
     }
 }

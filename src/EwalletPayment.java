@@ -1,53 +1,62 @@
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class EwalletPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;
 
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus) {
-        super(id, job, jobseeker, invoiceStatus);
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
+        super(id, jobs, jobseeker);
     }
 
-    public EwalletPayment(int id, Job job, Jobseeker jobseeker, InvoiceStatus invoiceStatus, Bonus bonus) {
-        super(id, job, jobseeker, invoiceStatus);
-        this.bonus = bonus;
-    }
-
-    @Override
-    public void setTotalFee() {
-        if (bonus != null && (bonus.getActive() == true) && getJob().getFee() > bonus.getMinTotalFee()) {
-            super.totalFee = getJob().getFee() + bonus.getExtraFee();
-        } else {
-            super.totalFee = getJob().getFee();
-
-        }
-
+    public EwalletPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, Bonus bonus) {
+        super(id, jobs, jobseeker);
+        this.setBonus(bonus);
     }
 
     @Override
     public PaymentType getPaymentType() {
         return PAYMENT_TYPE;
+    }
 
+    public Bonus getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(Bonus bonus) {
+        this.bonus = bonus;
+    }
+
+    @Override
+    public void setTotalFee() {
+        ArrayList<Job> jobs = getJobs();
+        for (Job job : jobs) {
+            int fee = job.getFee();
+            if (bonus != null && (bonus.getActive() == true) && fee > bonus.getMinTotalFee()) {
+                super.totalFee = fee + bonus.getExtraFee();
+            } else {
+                super.totalFee = fee;
+            }
+        }
     }
 
     @Override
     public String toString() {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMMM-yyyy");
         String date = dateFormat.format(getDate().getTime());
-        System.out.println("===================== E-WALLET PAYMENT =====================");
-        System.out.println("ID: " + getId());
-        System.out.println("Job: " + getJob().getName());
-        System.out.println("Date: " + date);
-        System.out.println("Job Seeker: " + getJobseeker().getName());
+        String result = "";
+        for (Job job : getJobs()) {
+            if ((bonus != null) && (bonus.getActive() == true) && (job.getFee() > bonus.getMinTotalFee())) {
+                result.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + "\nReferral Code = " + bonus.getReferralCode() + "\nTotal Fee = "
+                        + getTotalFee() + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            } else {
+                result.concat("\nId = " + getId() + "\nJob = " + job.getName() + "\nDate = " + date + "\nJob Seeker = "
+                        + getJobseeker().getName() + bonus.getReferralCode() + "\nTotal Fee = " + getTotalFee()
+                        + "\nStatus = " + getInvoiceStatus() + "\nPayment = " + PAYMENT_TYPE);
+            }
 
-        if (bonus != null && (bonus.getActive() == true) && getJob().getFee() > bonus.getMinTotalFee()) {
-            System.out.println("Referral Code: " + bonus.getReferralCode());
         }
-
-        setTotalFee();
-        System.out.println("Total Fee: " + getTotalFee());
-        System.out.println("Status: " + getInvoiceStatus());
-        System.out.println("Payment Type: " + PAYMENT_TYPE);
-        return "";
+        return result;
     }
 }

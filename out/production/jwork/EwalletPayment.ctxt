@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=EwalletPayment
+comment1.params=id\ job\ date\ jobseeker\ invoiceStatus
+comment1.target=EwalletPayment(int,\ Job,\ java.lang.String,\ Jobseeker,\ InvoiceStatus)
+comment2.params=id\ job\ date\ jobseeker\ invoiceStatus\ bonus
+comment2.target=EwalletPayment(int,\ Job,\ java.lang.String,\ Jobseeker,\ InvoiceStatus,\ Bonus)
+comment3.params=
+comment3.target=void\ setTotalFee()
+comment4.params=
+comment4.target=PaymentType\ getPaymentType()
+comment5.params=
+comment5.target=void\ printData()
+numComments=6
