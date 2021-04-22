@@ -25,7 +25,7 @@ public class DatabaseJob {
     public static Job getJobById(int id) {
         Job temp = null;
         for (int i = 0; i < JOB_DATABASE.size(); i++) {
-            if (id == JOB_DATABASE.get(i).id) {
+            if (id == JOB_DATABASE.get(i).getId()) {
                 temp = JOB_DATABASE.get(i);
             }
         }
