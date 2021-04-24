@@ -33,6 +33,11 @@ public class DatabaseBonus {
     }
 
     public static boolean addBonus(Bonus bonus) {
+        for (Bonus bonus2 : BONUS_DATABASE) {
+            if (bonus.getReferralCode() == bonus2.getReferralCode()) {
+                return false;
+            }
+        }
         BONUS_DATABASE.add(bonus);
         lastId = bonus.getId();
         return true;

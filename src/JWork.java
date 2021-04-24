@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 
 /**
  * Write a description of class JWork here.
@@ -27,6 +28,14 @@ public class JWork {
                 DatabaseJobseeker.addJobseeker(new Jobseeker(DatabaseJobseeker.getLastId() + 1, "Ilham",
                                 "Ilham@ui.ac.id", "IMasdasda123", 2021, 03, 6));
 
+                DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, false));
+                DatabaseBonus.addBonus(new Bonus(101, "BreathItIn", 200000, 500000, true));
+
+                // Job job1 = new Job(201, "Jonathan",
+                // DatabaseRecruiter.getRecruiterDatabase().get(0), 600000, )
+
+                // ArrayList<Job> jobs = new ArrayList<Job>()
+
                 System.out.println("\n=====================Jobseeker Database====================\n");
                 System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
                 DatabaseJob.addJob(new Job(1, "Backend Engineer BukaLapak", DatabaseRecruiter.getRecruiterById(1),
@@ -39,5 +48,7 @@ public class JWork {
                 System.out.println("\n=====================Job Database By Category====================\n");
                 System.out.println(DatabaseJob.getJobByCategory(JobCategory.DataAnalyst));
 
+                System.out.println("\n=====================Bonus=========================\n");
+                System.out.println(DatabaseBonus.getBonusDatabase());
         }
 }

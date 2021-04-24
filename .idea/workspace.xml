@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 6 - Case Study - DatabaseJob">
-      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" afterDir="false" />
-    </list>
+    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 6 - Case Study - DatabaseJob" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +62,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Modul 6 - Case Study - DatabaseJob" />
