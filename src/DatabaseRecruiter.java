@@ -34,16 +34,15 @@ public class DatabaseRecruiter {
     }
 
     // Access method to fetch a specific existing Recruiter
-    public static Recruiter getRecruiterById(int id) {
+    public static Recruiter getRecruiterById(int id) throws RecruiterNotFoundException {
         Recruiter temp = null;
-        for (Recruiter recruiter : RECRUITER_DATABASE) {
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
             if (id == recruiter.getId()) {
                 temp = recruiter;
-            } else {
-                temp = null;
+                return temp;
             }
         }
-        return temp;
+        throw new RecruiterNotFoundException(id);
     }
 
     public static boolean addRecruiter(Recruiter recruiter) {
@@ -52,16 +51,15 @@ public class DatabaseRecruiter {
         return true;
     }
 
-    public static boolean removeRecruiter(int id) {
+    public static boolean removeRecruiter(int id) throws RecruiterNotFoundException {
         boolean temp = true;
-        for (Recruiter recruiter : RECRUITER_DATABASE) {
+        for (Recruiter recruiter: RECRUITER_DATABASE) {
             if (id == recruiter.getId()) {
                 RECRUITER_DATABASE.remove(id);
                 temp = true;
-            } else {
-                temp = false;
+                return temp;
             }
         }
-        return temp;
+            throw new RecruiterNotFoundException(id);
     }
 }

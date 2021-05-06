@@ -22,13 +22,18 @@ public class DatabaseJob {
         return lastId;
     }
 
-    public static Job getJobById(int id) {
+    public static Job getJobById(int id) throws JobNotFoundException {
         Job temp = null;
-        for (int i = 0; i < JOB_DATABASE.size(); i++) {
-            if (id == JOB_DATABASE.get(i).getId()) {
-                temp = JOB_DATABASE.get(i);
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                temp = element;
+                return temp;
             }
         }
+        if (temp == null){
+            throw new JobNotFoundException(id);
+        }
+
         return temp;
     }
 
@@ -67,20 +72,18 @@ public class DatabaseJob {
         return true;
     }
 
-    /**
-     * Method to remove an existing Job
-     * 
-     * @param job
-     * @return boolean value whether the Job removal is successful or not
-     */
-    public static boolean removeJob(int id) {
-        for (Job job : JOB_DATABASE) {
-            if (job.getId() == job.getId()) {
-                JOB_DATABASE.remove(job);
-                return true;
+
+    public static boolean removeJob(int id) throws JobNotFoundException {
+        boolean temp = false;
+        for (Job element : JOB_DATABASE) {
+            if (element.getId() == id) {
+                JOB_DATABASE.remove(element);
+                temp = true;
+                return temp;
             }
         }
-        return false;
+        throw new JobNotFoundException(id);
+
     }
 
     // Access method to fetch a specific existing Job

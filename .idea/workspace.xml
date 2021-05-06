@@ -1,23 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 6 - Case Study - DatabaseJob" />
+    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 6 - Case Study - DatabaseJob">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BonusNotFound.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/EmailAlreadyExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FeeCalculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JobNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/JobSeekerNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RecruiterNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/ReferralCodeAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/BankPayment.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Bonus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseBonus.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseBonus.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseBonus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJob.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJobseeker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseJobseeker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseJobseeker.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseRecruiter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/DatabaseRecruiter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/DatabaseRecruiter.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/EwalletPayment.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Invoice.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/InvoiceStatus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/JWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/JWork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/JWork.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Job.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/JobCategory.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Jobseeker.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Location.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/PaymentType.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/jwork/Recruiter.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankPayment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankPayment.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bonus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Bonus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseBonus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseBonus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJob.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJob.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseJobseeker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseJobseeker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DatabaseRecruiter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseRecruiter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EwalletPayment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EwalletPayment.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoice.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InvoiceStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InvoiceStatus.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JWork.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JWork.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JWork.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Job.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Job.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JobCategory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/JobCategory.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Jobseeker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Jobseeker.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Location.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaymentType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PaymentType.ctxt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recruiter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Recruiter.ctxt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1rWJ6NMO8OfutYrdGKhSbC1iHib" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Jonathan_1806200085_OOP" />
   </component>
   <component name="RunManager">
     <configuration name="JWork" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -65,6 +146,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Modul 6 - Case Study - DatabaseJob" />
     <option name="LAST_COMMIT_MESSAGE" value="Modul 6 - Case Study - DatabaseJob" />
   </component>
