@@ -6,7 +6,8 @@ import java.util.ArrayList;
  * @author Jonathan
  * @version April 4 2021
  */
-public class JWork {
+public class JWork extends Thread {
+
         // instance variables - replace the example below with your own
 
         /**
@@ -57,61 +58,72 @@ public class JWork {
                         System.out.println(e.getMessage());
                 }
 
-                try {
-                        DatabaseJobseeker.removeJobseeker(24);
-                } catch (JobSeekerNotFoundException e) {
-                        System.out.println(e.getMessage());
-                }
-                try {
-                        DatabaseRecruiter.removeRecruiter(23);
-                } catch (RecruiterNotFoundException e) {
-                        System.out.println(e.getMessage());
-                }
-                try {
-                        DatabaseJob.getJobById(20);
-                } catch (JobNotFoundException e) {
-                        System.out.println(e.getMessage());
-                }
-                try {
-                        DatabaseBonus.getBonusById(21);
-                } catch (BonusNotFound bonusNotFound) {
-                        System.out.println(bonusNotFound.getMessage());
-                }
+//                try {
+//                        DatabaseJobseeker.removeJobseeker(24);
+//                } catch (JobSeekerNotFoundException e) {
+//                        System.out.println(e.getMessage());
+//                }
+//                try {
+//                        DatabaseRecruiter.removeRecruiter(23);
+//                } catch (RecruiterNotFoundException e) {
+//                        System.out.println(e.getMessage());
+//                }
+//                try {
+//                        DatabaseJob.getJobById(20);
+//                } catch (JobNotFoundException e) {
+//                        System.out.println(e.getMessage());
+//                }
+//                try {
+//                        DatabaseBonus.getBonusById(21);
+//                } catch (BonusNotFound bonusNotFound) {
+//                        System.out.println(bonusNotFound.getMessage());
+//                }
 
-                System.out.println("=========Database JobSeeker============");
-                System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
-
-                System.out.println("=========Database Bonus===============");
-                System.out.println(DatabaseBonus.getBonusDatabase());
+//                System.out.println("=========Database JobSeeker============");
+//                System.out.println(DatabaseJobseeker.getDatabaseJobseeker());
+//
+//                System.out.println("=========Database Bonus===============");
+//                System.out.println(DatabaseBonus.getBonusDatabase());
                 ArrayList<Job> jobs1 = new ArrayList<Job>();
                 ArrayList<Job> jobs = new ArrayList<Job>();
 
                 try {
-                        jobs1.add(new Job(10, "Backend Engineer Traveloka", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+                        jobs1.add(new Job(1, "Backend Engineer Traveloka", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
                 } catch (RecruiterNotFoundException e) {
                         System.out.println(e.getMessage());
                 }
                 try {
-                        jobs.add(new Job(11, "Backend Engineer Tokopedia", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+                        jobs.add(new Job(2, "Backend Engineer Tokopedia", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
                 } catch (RecruiterNotFoundException e) {
                         System.out.println(e.getMessage());
                 }
 
                 try {
                         DatabaseInvoice.addInvoice(new BankPayment(1, jobs, DatabaseJobseeker.getJobseekerById(1)));
-                } catch (JobSeekerNotFoundException e) {
+                } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
                         System.out.println(e.getMessage());
                 }
                 try {
-                        DatabaseInvoice.addInvoice(new EwalletPayment(2, jobs1, DatabaseJobseeker.getJobseekerById(2)));
-                } catch (JobSeekerNotFoundException e) {
+                        DatabaseInvoice.addInvoice(new EwalletPayment(2, jobs, DatabaseJobseeker.getJobseekerById(2)));
+                } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
                         System.out.println(e.getMessage());
                 }
+
+                System.out.println("\n===================Database Invoice=============");
+                System.out.println(DatabaseInvoice.getInvoiceDatabase());
+
+                System.out.println("\n===================Exception Trial==============");
                 try {
-                        DatabaseInvoice.addInvoice(new EwalletPayment(3, jobs, DatabaseJobseeker.getJobseekerById(3)));
-                } catch (JobSeekerNotFoundException e) {
+                        DatabaseInvoice.removeInvoice(20);
+                } catch (InvoiceNotFoundException e) {
                         System.out.println(e.getMessage());
                 }
+//                try {
+//                        DatabaseInvoice.addInvoice(new EwalletPayment(3, jobs, DatabaseJobseeker.getJobseekerById(3)));
+//                } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
+//                        System.out.println(e.getMessage());
+//                }
+
                 for (Invoice invoice : DatabaseInvoice.getInvoiceDatabase()){
                         new Thread(new FeeCalculator(invoice)).start();
                 }

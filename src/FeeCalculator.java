@@ -1,4 +1,3 @@
-
 public class FeeCalculator implements Runnable{
     private Invoice invoice;
 
