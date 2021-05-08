@@ -18,6 +18,8 @@ public class JWork extends Thread {
         }
 
         public static void main(String[] args) {
+                JWork thread = new JWork();
+                thread.start();
                 Location location1 = new Location("Banten", "Tangerang", "Tempat Lahir");
                 DatabaseRecruiter.addRecruiter(new Recruiter(1, "Jonathan",
                         "jonathan.sendiko@gmail.com", "085945644450", location1));
@@ -84,8 +86,8 @@ public class JWork extends Thread {
 //
 //                System.out.println("=========Database Bonus===============");
 //                System.out.println(DatabaseBonus.getBonusDatabase());
-                ArrayList<Job> jobs1 = new ArrayList<Job>();
-                ArrayList<Job> jobs = new ArrayList<Job>();
+                ArrayList<Job> jobs1 = new ArrayList<>();
+
 
                 try {
                         jobs1.add(new Job(1, "Backend Engineer Traveloka", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
@@ -93,18 +95,18 @@ public class JWork extends Thread {
                         System.out.println(e.getMessage());
                 }
                 try {
-                        jobs.add(new Job(2, "Backend Engineer Tokopedia", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
+                        jobs1.add(new Job(2, "Backend Engineer Tokopedia", DatabaseRecruiter.getRecruiterById(1), 10000, JobCategory.BackEnd));
                 } catch (RecruiterNotFoundException e) {
                         System.out.println(e.getMessage());
                 }
 
                 try {
-                        DatabaseInvoice.addInvoice(new BankPayment(1, jobs, DatabaseJobseeker.getJobseekerById(1)));
+                        DatabaseInvoice.addInvoice(new BankPayment(DatabaseInvoice.getLastId() + 1,jobs1, DatabaseJobseeker.getJobseekerById(1), 10000));
                 } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
                         System.out.println(e.getMessage());
                 }
                 try {
-                        DatabaseInvoice.addInvoice(new EwalletPayment(2, jobs, DatabaseJobseeker.getJobseekerById(2)));
+                        DatabaseInvoice.addInvoice(new BankPayment(DatabaseInvoice.getLastId() + 1, jobs1, DatabaseJobseeker.getJobseekerById(1), 12000));
                 } catch (JobSeekerNotFoundException | OngoingInvoiceAlreadyExistsException e) {
                         System.out.println(e.getMessage());
                 }

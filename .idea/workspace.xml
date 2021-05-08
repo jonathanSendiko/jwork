@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 7 - Case Study - FirstCommit">
-      <change afterPath="$PROJECT_DIR$/src/InvoiceNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/OngoingInvoiceAlreadyExistsException.java" afterDir="false" />
+    <list default="true" id="cbaa5dd6-3a39-4ce2-9ef7-f5848ed6898c" name="Default Changelist" comment="Modul 7 - Post Test - FirstCommit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/jwork/JWork.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/jwork/JWork.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankPayment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankPayment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DatabaseInvoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DatabaseInvoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FeeCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FeeCalculator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Invoice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JWork.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,21 @@
       <option name="project" value="LOCAL" />
       <updated>1620296893327</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modul 7 - Post Test - FirstCommit">
+      <created>1620440921190</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620440921190</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Modul 7 - Post Test - FirstCommit">
+      <created>1620440934119</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620440934119</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -103,6 +116,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Modul 6 - Case Study - DatabaseJob" />
     <MESSAGE value="Modul 7 - Case Study - FirstCommit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 - Case Study - FirstCommit" />
+    <MESSAGE value="Modul 7 - Post Test - FirstCommit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modul 7 - Post Test - FirstCommit" />
   </component>
 </project>

@@ -33,20 +33,15 @@ public class DatabaseInvoice {
         return temp;
     }
 
-    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException {
-        boolean result = false;
-        for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
-            if (invoice.getInvoiceStatus() == InvoiceStatus.Ongoing) {
+    public static boolean addInvoice(Invoice invoice) throws OngoingInvoiceAlreadyExistsException{
+        for (Invoice element : INVOICE_DATABASE) {
+            if (element.getInvoiceStatus() == InvoiceStatus.Ongoing && element.getId() == invoice.getId()) {
                 throw new OngoingInvoiceAlreadyExistsException(invoice);
-            } else {
-                INVOICE_DATABASE.add(invoice);
-                lastId = invoice.getId();
-                System.out.println("Added");
-                result = true;
             }
         }
-        return result;
-
+        INVOICE_DATABASE.add(invoice);
+        lastId = invoice.getId();
+        return true;
     }
 
     public static boolean changeInvoiceStatus(int id, InvoiceStatus invoiceStatus) {
@@ -62,17 +57,21 @@ public class DatabaseInvoice {
         return temp;
     }
 
-    public static boolean removeInvoice(int id)throws InvoiceNotFoundException{
+    public static boolean removeInvoice(int id) throws InvoiceNotFoundException {
         boolean temp = false;
         for (Invoice invoice : INVOICE_DATABASE) {
-            if (invoice.getId() == invoice.getId()) {
+            if (id == invoice.getId()) {
                 INVOICE_DATABASE.remove(invoice);
                 temp = true;
-                return temp;
+            } else {
+                temp = false;
             }
         }
-        throw new InvoiceNotFoundException(id);
+        if (!temp){
+            throw new InvoiceNotFoundException(id);
+        }
 
+        return temp;
     }
 
 }

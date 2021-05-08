@@ -29,12 +29,10 @@ public abstract class Invoice {
     public Invoice(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         this.id = id;
         this.jobs = jobs;
-        this.totalFee = totalFee;
+        this.date = Calendar.getInstance();
         this.jobseeker = jobseeker;
         this.invoiceStatus = InvoiceStatus.Ongoing;
-        this.date = Calendar.getInstance();
     }
-
     /**
      * Accessor Method to get Id of the Invoice
      * 
