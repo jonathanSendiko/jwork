@@ -39,16 +39,16 @@ public class DatabaseJob {
     }
 
     public static ArrayList<Job> getJobByRecruiter(int recruiterId) {
-        ArrayList<Job> temp = new ArrayList<Job>();
-        for (int i = 0; i < JOB_DATABASE.size(); i++) {
-            if (recruiterId == JOB_DATABASE.get(i).getRecruiter().getId()) {
-                temp.add(JOB_DATABASE.get(i));
-            } else {
-                return null;
+        ArrayList<Job> temp = null;
+        for (Job element : JOB_DATABASE) {
+            if (element.getRecruiter().getId() == recruiterId) {
+                if (temp == null) {
+                    temp = new ArrayList<Job>();
+                }
+                temp.add(element);
             }
         }
         return temp;
-
     }
 
     public static ArrayList<Job> getJobByCategory(JobCategory category) {
