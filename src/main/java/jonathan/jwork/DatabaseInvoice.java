@@ -24,7 +24,7 @@ public class DatabaseInvoice {
         throw new InvoiceNotFoundException(id);
     }
 
-    public static ArrayList<Invoice> getJobByJobseeker(int jobseekerid) {
+    public static ArrayList<Invoice> getInvoiceByJobseeker(int jobseekerid) {
         ArrayList<Invoice> temp = new ArrayList<Invoice>();
         for (int i = 0; i < INVOICE_DATABASE.size(); i++) {
             if (jobseekerid == INVOICE_DATABASE.get(i).getJobseeker().getId()) {
