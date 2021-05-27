@@ -62,7 +62,7 @@ public class InvoiceController {
                                   @RequestParam(value = "jobseekerId") int jobseekerId,
                                   @RequestParam(value = "adminFee") int adminFee){
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for(var i = 0; i < jobIdList.size(); i++) {
             try {
                 jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
