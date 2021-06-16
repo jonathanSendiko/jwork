@@ -1,4 +1,8 @@
 package jonathan.jwork;
+
+/**
+ * Tipe data enum untuk status invoice
+ */
 public enum InvoiceStatus {
     Cancelled("Cancelled"), Finished("Finished"), Ongoing("Ongoing");
 

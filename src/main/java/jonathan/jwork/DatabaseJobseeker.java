@@ -1,6 +1,13 @@
 package jonathan.jwork;
 import java.util.ArrayList;
 
+
+/**
+ * Class database untuk menyimpan objek jobseeker secara static pada storage sementara selama program berjalan
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class DatabaseJobseeker {
 
     private static ArrayList<Jobseeker> JOBSEEKER_DATABASE = new ArrayList<Jobseeker>();

@@ -71,9 +71,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new BankPayment(DatabaseInvoice.getLastId()+1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), adminFee);
+            invoice = new BankPayment(DatabaseInvoice.getLastId()+1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), adminFee);
             invoice.setTotalFee();
-        } catch (JobSeekerNotFoundException e) {
+        } catch (Exception e) {
             e.getMessage();
         }
         boolean status = false;
@@ -89,12 +89,12 @@ public class InvoiceController {
         }
     }
 
-    @RequestMapping(value = "createEWalletPayment", method = RequestMethod.POST)
+    @RequestMapping(value = "/createEWalletPayment", method = RequestMethod.POST)
     public Invoice addEWalletPayment(@RequestParam(value = "jobIdList") ArrayList<Integer> jobIdList,
                                      @RequestParam(value = "jobseekerId") int jobseekerId,
                                      @RequestParam(value = "referralCode") String referralCode) {
         Invoice invoice = null;
-        ArrayList<Job> jobs = null;
+        ArrayList<Job> jobs = new ArrayList<>();
         for(var i = 0; i < jobIdList.size(); i++) {
             try {
                 jobs.add(DatabaseJob.getJobById(jobIdList.get(i)));
@@ -103,9 +103,9 @@ public class InvoiceController {
             }
         }
         try {
-            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseeker.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
+            invoice = new EwalletPayment(DatabaseInvoice.getLastId() + 1, jobs, DatabaseJobseekerPostgre.getJobseekerById(jobseekerId), DatabaseBonus.getBonusByRefferalCode(referralCode));
             invoice.setTotalFee();
-        } catch (JobSeekerNotFoundException e) {
+        } catch (Exception e) {
             e.getMessage();
         }
         boolean status = false;

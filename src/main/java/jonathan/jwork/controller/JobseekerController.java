@@ -17,8 +17,8 @@ public class JobseekerController {
     public Jobseeker getJobseekerById(@PathVariable int id) {
         Jobseeker jobseeker = null;
         try {
-            jobseeker = DatabaseJobseeker.getJobseekerById(id);
-        } catch (JobSeekerNotFoundException e) {
+            jobseeker = DatabaseJobseekerPostgre.getJobseekerById(id);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -30,10 +30,10 @@ public class JobseekerController {
                                        @RequestParam(value="email") String email,
                                        @RequestParam(value="password") String password)
     {
-        Jobseeker jobseeker = new Jobseeker(DatabaseJobseeker.getLastId()+1, name, email, password);
+        Jobseeker jobseeker = new Jobseeker(DatabaseJobseekerPostgre.getLastJobseekerId()+1, name, email, password);
         try {
-            DatabaseJobseeker.addJobseeker(jobseeker);
-        } catch (EmailAlreadyExistsException e) {
+            DatabaseJobseekerPostgre.addJobseeker(jobseeker);
+        } catch (Exception e) {
             e.getMessage();
             return null;
         }
@@ -43,6 +43,12 @@ public class JobseekerController {
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public Jobseeker loginJobseeker(@RequestParam(value="email") String email,
                                     @RequestParam(value="password") String password){
-        return(DatabaseJobseeker.getJobseekerLogin(email, password));
+        return(DatabaseJobseekerPostgre.getJobseekerLogin(email, password));
+    }
+
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    public Boolean removeJobseeker(@RequestParam(value = "id") int id){
+        Boolean jobseeker = DatabaseJobseekerPostgre.removeJobseeker(id);
+        return jobseeker;
     }
 }

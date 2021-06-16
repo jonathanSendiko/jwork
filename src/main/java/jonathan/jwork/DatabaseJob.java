@@ -2,12 +2,11 @@ package jonathan.jwork;
 import java.util.ArrayList;
 
 /**
- * Write a description of class JWork here.
- *
+ * Class database untuk menyimpan objek job secara static pada storage sementara selama program berjalan
  * @author Jonathan
- * @version March 18 2021
+ * @version 1.0
+ * @since 10 Juni 2021
  */
-
 public class DatabaseJob {
 
     // listjob variable

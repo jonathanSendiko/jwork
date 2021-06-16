@@ -2,6 +2,12 @@ package jonathan.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * Class Pembuatan Invoice menggunakkan ewallet
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class EwalletPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.EwalletPayment;
     private Bonus bonus;

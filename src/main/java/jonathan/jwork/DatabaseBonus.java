@@ -1,6 +1,13 @@
 package jonathan.jwork;
 import java.util.ArrayList;
 
+
+/**
+ * Class database untuk menyimpan objek bonus secara static pada storage sementara selama program berjalan
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class DatabaseBonus {
     private static ArrayList<Bonus> BONUS_DATABASE = new ArrayList<Bonus>();
     private static int lastId = 0;

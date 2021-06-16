@@ -1,4 +1,8 @@
 package jonathan.jwork;
+
+/**
+ * Thread untuk melakukan kalkulasi fee
+ */
 public class FeeCalculator implements Runnable{
     private Invoice invoice;
 

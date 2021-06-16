@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Invoice here.
- *
+ * Class Objek Bonus
  * @author Jonathan
- * @version March 18 2021
+ * @version 1.0
+ * @since 10 Juni 2021
  */
 package jonathan.jwork;
 public class Job {

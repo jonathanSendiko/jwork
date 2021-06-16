@@ -1,4 +1,11 @@
 package jonathan.jwork;
+
+/**
+ * Class tipe data enum untuk tipe pembayaran
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public enum PaymentType {
     BankPayment("Bank Payment"), EwalletPayment("E-wallet Payment");
 

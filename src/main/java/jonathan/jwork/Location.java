@@ -1,9 +1,9 @@
 package jonathan.jwork;
 /**
- * Write a description of class Location here.
- *
+ * Class Objek location
  * @author Jonathan
- * @version March 18 2021
+ * @version 1.0
+ * @since 10 Juni 2021
  */
 public class Location {
     // instance variables of the Location

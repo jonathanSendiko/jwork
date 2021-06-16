@@ -1,6 +1,13 @@
 package jonathan.jwork;
 import java.util.ArrayList;
 
+
+/**
+ * Class database untuk menyimpan objek invoice secara static pada storage sementara selama program berjalan
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class DatabaseInvoice {
     private static ArrayList<Invoice> INVOICE_DATABASE = new ArrayList<Invoice>();
     private static int lastId = 0;

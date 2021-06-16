@@ -5,6 +5,13 @@ import java.util.GregorianCalendar;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+
+/**
+ * Class Objek Jobseeker
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class Jobseeker {
     // instance variables for the Jobseeker
     private int id;

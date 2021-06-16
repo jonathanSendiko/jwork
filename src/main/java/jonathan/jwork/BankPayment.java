@@ -2,19 +2,42 @@ package jonathan.jwork;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
+/**
+ * Class Pembuatan Invoice menggunakkan bank
+ * @author Jonathan
+ * @version 1.0
+ * @since 10 Juni 2021
+ */
 public class BankPayment extends Invoice {
     private static final PaymentType PAYMENT_TYPE = PaymentType.BankPayment;
     private int adminFee;
 
+    /**
+     * Constructor pembuatan invoice dengan bank payment tanpa biaya admin
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker) {
         super(id, jobs, jobseeker);
     }
 
+    /**
+     * Constructor pembuatan invoice dengan bank payment dengan biaya admin
+     * @param id
+     * @param jobs
+     * @param jobseeker
+     * @param adminFee
+     */
     public BankPayment(int id, ArrayList<Job> jobs, Jobseeker jobseeker, int adminFee) {
         super(id, jobs, jobseeker);
         this.adminFee = adminFee;
     }
 
+
+    /**
+     * Setter method untuk total Fee invoice
+     */
     @Override
     public void setTotalFee() {
         for (Job job : getJobs()) {
