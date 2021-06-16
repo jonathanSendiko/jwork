@@ -21,7 +21,7 @@ public class DatabaseJobseeker {
         return lastId;
     }
 
-    public static Jobseeker getJobseekerById(int id) throws JobSeekerNotFoundException {
+    public static Jobseeker getJobseekerById(int id) throws JobseekerNotFoundException {
         Jobseeker temp = null;
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
             if (id == jobseeker.getId()) {
@@ -29,7 +29,7 @@ public class DatabaseJobseeker {
                 return temp;
             }
         }
-        throw new JobSeekerNotFoundException(id);
+        throw new JobseekerNotFoundException(id);
     }
 
     public static boolean addJobseeker(Jobseeker jobseeker) throws EmailAlreadyExistsException {
@@ -43,14 +43,14 @@ public class DatabaseJobseeker {
         return true;
     }
 
-    public static boolean removeJobseeker(int id) throws JobSeekerNotFoundException {
+    public static boolean removeJobseeker(int id) throws JobseekerNotFoundException {
         for (Jobseeker jobseeker : JOBSEEKER_DATABASE) {
             if (jobseeker.getId() == id) {
                 JOBSEEKER_DATABASE.remove(jobseeker.getId());
                 return true;
             }
         }
-        throw new JobSeekerNotFoundException(id);
+        throw new JobseekerNotFoundException(id);
     }
 
     public static Jobseeker getJobseekerLogin(String email, String password){

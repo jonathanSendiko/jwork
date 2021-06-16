@@ -7,10 +7,10 @@ package jonathan.jwork;
  * @version 1.0
  * @since 10 Juni 2021
  */
-public class JobSeekerNotFoundException extends Exception {
+public class JobseekerNotFoundException extends Exception {
     private int jobseeker_error;
 
-    public JobSeekerNotFoundException(int jobseeker_input) {
+    public JobseekerNotFoundException(int jobseeker_input) {
         super("Jobseeker ID: ");
         this.jobseeker_error = jobseeker_input;
     }
